@@ -1,0 +1,525 @@
+/******** LAYOUT ***********/
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+	margin: 0;
+	padding: 0;
+	table-layout: fixed;
+	word-wrap: break-word;
+}
+
+.content {
+	background-color: white;
+	margin: 0 auto;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+@media (min-width: 1000px) {
+	.content {
+		max-width: 750px;
+	}
+}
+
+
+/******** HEADER ****************/
+header {
+	display: block;
+	padding: 0rem 1rem;
+	border-bottom: 1px solid #ccc;
+}
+
+	header img.header-icon {
+		float: left;
+		width: 12%;
+		margin-right: 30px;
+	}
+
+	header img.header-back {
+		float: left;
+		width: 30px;
+		margin: 43px 30px 0 30px;
+	}
+
+	header button.header-button-reply {
+		float: right;
+		background: #1ca1f2;
+		border: 0;
+		border-radius: 38px;
+		font-size: 3.0rem;
+		color: white;
+		width: 200px;
+		padding: 7px;
+		font-weight: bold;
+		margin-top: 30px;
+		position: initial;
+	}
+
+	header button.header-button {
+		float: right;
+		background: #1ca1f2;
+		border: 0;
+		border-radius: 38px;
+		font-size: 3.3rem;
+		color: white;
+		width: 200px;
+		padding: 7px;
+		font-weight: bold;
+		margin-top: 30px;
+		position: initial;
+	}
+
+	header h1 {
+		font-size: 3.3rem;
+		display: inline-block;
+		/* width: 50%; */
+		padding: 0px;
+		margin: 1.65rem;
+	}
+
+
+@media (min-width: 1000px) {
+	header img.header-icon {
+	    float: left;
+	    width: 5%;
+	    margin-right: 16px;
+	}
+
+	header img.header-back {
+		float: left;
+    	width: 2.2%;
+    	margin-right: 30px;
+    	margin-top: 6px;
+	}
+
+	header button.header-button-reply {
+        background: #1ca1f2;
+        border: 0;
+        font-size: 1.3rem;
+        color: white;
+        width: 100px;
+        padding: 3px;
+        margin-top: 6px;
+    }
+
+	header button.header-button {
+	    background: #1ca1f2;
+	    border: 0;
+	    font-size: 1.3rem;
+	    color: white;
+	    width: 100px;
+	    padding: 3px;
+	    margin-top: 5px;
+	}
+
+	header h1 {
+		font-size: 1.3rem;
+		padding: 5px;
+		margin: 0.2rem;
+	}
+}
+
+/******** MAIN ****************/
+
+main {
+	position: relative;
+}
+
+.post-tweet-button {
+    position: fixed;
+    width: 20%;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.post-tweet-button img {
+    width: 70%;;
+}
+
+@media (min-width: 1000px) {
+	.post-tweet-button {
+		width: 7%;
+		right: 23%;
+	}
+}
+
+@media (max-width: 500px) {
+	.post-tweet-button {
+		width: 15%;
+		right: 0;
+	}
+}
+
+
+/***** EACH TWEET DESIGN **********/
+
+.tweet {
+	display: flex;
+	display: inline-flex;
+	justify-content: center;
+	padding: 2rem 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.tweet-icon {
+    flex-basis: 20%;
+    text-align: center;
+}
+
+.tweet-icon img {
+	width: 60%;
+}
+
+.tweet-name {
+	font-weight: bold;
+	font-size: smaller;
+}
+
+.tweet-name-area {
+    font-size: 3rem;
+}
+
+.tweet-created-at {
+	color: gray;
+	font-size: 1.9rem;
+}
+
+.tweet-content {
+    flex-basis: 100%;
+    overflow: auto;
+}
+
+.tweet-content p {
+	font-size: 2.3rem;
+	padding: 0 0.3rem 0.2rem 0;
+	color: #353535;
+}
+
+.tweet-image {
+	width: fit-content;
+	margin: 0 auto;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	margin-bottom: 15px;
+}
+
+.tweet-buttons {
+	display: block;
+}
+
+.tweet-reply {
+    float: left;
+    width: 7%;
+    padding: 0.1rem;
+}
+
+.tweet-reply-count {
+    float: left;
+    width: 10%;
+    padding-left: 1.2rem;
+    font-size: 2.4rem;
+    color: gray;
+}
+
+.tweet-like {
+	float: left;
+	width: 7%;
+	margin-left: 5rem;
+	padding: 0.1rem;
+}
+
+.tweet-like-count {
+	float: left;
+	width: 10%;
+	padding-left: 1.2rem;
+	font-size: 2.4rem;
+	color: gray;
+}
+
+.delete-button {
+	float: right;
+	background: #1ca1f2;
+	border: 0;
+	border-radius: 38px;
+	font-size: 2.0rem;
+	color: white;
+	width: 150px;
+	padding: 5px;
+	font-weight: bold;
+	margin-top: -55px;
+}
+
+
+@media (min-width: 1000px) {
+		.tweet {
+		display: flex;
+		display: inline-flex;
+		justify-content: center;
+		padding: 2rem 0;
+		border-bottom: 1px solid #ccc;
+	}
+
+	.tweet-icon {
+		flex-basis: 16%;
+		text-align: center;
+		padding-right: 10px;
+	}
+
+	.tweet-icon img {
+		width: 50%;
+	}
+
+	.tweet-name {
+		font-weight: bold;
+		font-size: 1.3rem;
+	}
+
+	.tweet-name-area {
+		font-size: 2rem;
+	}
+
+	.tweet-created-at {
+		color: gray;
+		font-size: 0.9rem;
+	}
+
+	.tweet-content {
+		flex-basis: 78%;
+		overflow: auto;
+	}
+
+	.tweet-content p {
+		font-size: 1.5rem;
+		padding: 0 0.3rem 0.2rem 0;
+		color: #353535;
+	}
+
+	.tweet-image {
+		width: 90%;
+		margin: 0 auto;
+		border-radius: 10px;
+		border: 1px solid #ccc;
+		margin-bottom: 15px;
+	}
+
+	.tweet-buttons {
+		display: block;
+	}
+
+	.tweet-reply {
+		float: left;
+		width: 5%;
+	}
+
+	.tweet-reply-count {
+		float: left;
+		width: 7%;
+		padding-left: 1.2rem;
+		font-size: 1.4rem;
+		color: gray;
+	}
+
+	.tweet-like {
+		float: left;
+		width: 5%;
+		margin-left: 5rem;
+		padding: 0.1rem;
+	}
+
+	.tweet-like-count {
+		float: left;
+		width: 10%;
+		padding-left: 1.2rem;
+		font-size: 1.4rem;
+		color: gray;
+	}
+
+	.delete-button {
+	float: right;
+	background: #1ca1f2;
+	border: 0;
+	border-radius: 38px;
+	font-size: 1.3rem;
+	color: white;
+	width: 100px;
+	padding: 3px;
+	font-weight: bold;
+	margin-top: -37px;
+}
+}
+
+/***** TWEET DETAIL BOTTOM ********/
+
+.tweet-detail-bottom {
+	display: flex;
+	border-bottom: 1px solid #ccc;
+	width: 100%;
+	margin: 0 auto;
+	height: 100px;
+	font-size: 2.7rem;
+}
+
+.tweet-detail-reply {
+    /* flex: 50%; */
+    font-weight: bold;
+    margin: auto;
+}
+
+.tweet-detail-reply span {
+	color: gray;
+	font-weight: normal;
+	font-size: 2.3rem;
+}
+
+.tweet-detail-like {
+	flex: 50%;
+	font-weight: bold;
+    margin: 20px 0 0 50px;
+}
+
+.tweet-detail-like span {
+	color: gray;
+	font-weight: normal;
+	font-size: 2.3rem;
+}
+
+@media (min-width: 1000px) {
+	.tweet-detail-bottom {
+		font-size: 1.4rem;
+	    height: 65px;
+	}
+
+	.tweet-detail-reply span {
+		font-size: 1.0rem;
+	}
+
+	.tweet-detail-like span {
+		font-size: 1.0rem;
+	}
+}
+
+/***** POST TWEET FORM **********/
+
+.tweet-form {
+	width: auto%;
+	min-height: auto;
+	display: flex;
+	display: inline-flex;
+	justify-content: center;
+	padding: 1rem 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.tweet-form-icon {
+    flex-basis: 12%;
+    text-align: left;
+    margin-right: 5rem;
+}
+
+.tweet-form-icon img {
+	width: 90%;
+}
+
+.tweet-form-content {
+    flex-basis: 60%;
+    padding-left: 7px;
+
+}
+
+.tweet-form-content p {
+	font-size: 40px;
+	color: gray;
+}
+
+.tweet-form-content input {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    width: 90%;
+    border: 1px solid #9e9e9e;
+    border-radius: 20px;
+    padding: 4% 5%;
+    font-size: 210%;
+    font-weight: normal;
+    color: #525252;
+    margin-bottom: 8%;
+}
+
+.tweet-form-content textarea {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    width: 94%;
+    border: 1px solid #9e9e9e;
+    border-radius: 20px;
+    padding: 2% 2%;
+    font-size: 210%;
+    font-weight: normal;
+    color: #525252;
+    margin-bottom: 4%;
+}
+
+.tweet-form-image {
+	width: 90px;
+}
+
+
+@media (min-width: 1000px) {
+
+.tweet-form {
+	width: auto%;
+	min-height: auto;
+	display: flex;
+	display: inline-flex;
+	justify-content: center;
+	padding: 1rem 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.tweet-form-icon {
+    flex-basis: 12%;
+    text-align: left;
+    margin-right: 10rem;
+}
+
+.tweet-form-icon img {
+	width: 80%;
+}
+
+.tweet-form-content {
+    flex-basis: 55%;
+    /* padding-left: 0%; */
+}
+
+.tweet-form-content p {
+	font-size: 40px;
+	color: gray;
+}
+
+.tweet-form-content input {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    width: 94%;
+    border: 1px solid #9e9e9e;
+    border-radius: 20px;
+    padding: 2% 2%;
+    font-size: 100%;
+    font-weight: normal;
+    color: #525252;
+    margin-bottom: 8%;
+}
+
+.tweet-form-content textarea {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    width: 94%;
+    border: 1px solid #9e9e9e;
+    border-radius: 20px;
+    padding: 2% 2%;
+    font-size: 100%;
+    font-weight: normal;
+    color: #525252;
+    margin-bottom: 4%;
+}
+
+.tweet-form-image {
+	width: 20%;
+}
+
+}
