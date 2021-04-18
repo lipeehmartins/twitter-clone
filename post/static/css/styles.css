@@ -298,10 +298,10 @@ main {
 
 	.tweet-image {
 		width: 90%;
-		margin: 0 auto;
+		margin: 0px 10px;
 		border-radius: 10px;
 		border: 1px solid #ccc;
-		margin-bottom: 15px;
+		/* margin-bottom: 12px; */
 	}
 
 	.tweet-buttons {
@@ -310,7 +310,8 @@ main {
 
 	.tweet-reply {
 		float: left;
-		width: 5%;
+		width: 6%;
+		padding: 1.rem;
 	}
 
 	.tweet-reply-count {
