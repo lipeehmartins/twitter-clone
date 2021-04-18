@@ -11,8 +11,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 import django_heroku
 import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -38,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'post'
+    'post',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -130,5 +136,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Activate Django-Heroku
+MEDIA_URL = '/media/'
+
+
+cloudinary.config(
+  cloud_name = "djichusdh",
+  api_key = "696121427464116",
+  api_secret = "V9CAguoTyHd7rQRwCt5a7NYOKQk"
+)
+
 django_heroku.settings(locals())

@@ -2,9 +2,10 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from .models import Tweet
+from cloudinary.forms import cl_init_js_callbacks;
 
 def index(request,):
-    all_Tweet = Tweet.objects.filter(parent_tweet_id=None)
+    all_Tweet = Tweet.objects.order_by('-created_at').filter(parent_tweet_id=None)
     for tweet in all_Tweet:
         tweet.replycount = Tweet.objects.filter(parent_tweet_id=tweet.id).count()
 
@@ -19,14 +20,8 @@ def reply(request, id):
         name = request.POST.get('name')
         text = request.POST.get('text')
         image = request.FILES.get('image_upload')
-        if image:
-            with open('post/static/images/' + str(image), 'wb+') as destination:
-                for chunk in image.chunk():
-                    destination.write(image)
-            imageurl = 'static/images/' + str(image)
-        else:
-            imageurl = None
-        t = Tweet(name=name, content=text, image_path=imageurl, parent_tweet_id=id)
+
+        t = Tweet(name=name, content=text, image_path=image, parent_tweet_id=id)
         t.save()
         return HttpResponseRedirect(reverse('home'))
     tweetcontent = Tweet.objects.get(id=id)
@@ -44,17 +39,11 @@ def post(request):
         name = request.POST.get('name')
         text = request.POST.get('text')
         image = request.FILES.get('image_upload')
-        if image:
-            with open('post/static/images/' + str(image), 'wb+') as destination:
-                for chunk in image.chunks():
-                    destination.write(chunk)
-            imageurl = 'images/' + str(image)
-        else:
-            imageurl = None
-        t = Tweet(name=name, content=text, image_path=imageurl)
+
+        t = Tweet(name=name, content=text, image_path=image )
         t.save()
         return HttpResponseRedirect(reverse('home'))
-    return render(request, 'tweet/post-tweet.html')
+
 
 def detail(request, id):
     if request.POST:
@@ -62,7 +51,7 @@ def detail(request, id):
         text = request.POST.get('text')
         image = request.FILES.get('image_upload')
         if image:
-            with open('static/images/' + str(image), 'wb+') as destination:
+            with open('images' + str(image), 'wb+') as destination:
                 for chunk in image.chunk():
                     destination.write(chunk)
             imageurl = 'images/' + str(image)

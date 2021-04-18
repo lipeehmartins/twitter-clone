@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load cloudinary %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +12,7 @@
 <body>
 	<div class="content">
 		<form action="{% url 'post' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+			{{tweet.image }}
 		<header>
 			<h1>Post Tweet</h1>
 			<button type="submit" class="header-button">Tweet</button>
@@ -36,6 +38,7 @@
 
 				{% for tweet in tweets %}
 				{% if tweet.parent_tweet_id is None %}
+
 			<!-- Sample Tweet 1 -->
 			<div class="tweet" style="width: 100%;">
 				<div class="tweet-icon">
@@ -50,7 +53,7 @@
 						</form>
 					</div>
 					<a href="{% url 'detail' tweet.id %}"><p>{{tweet.content}}</p></a>
-					<a href="{% url 'detail' tweet.id %}"><img alt="{{tweet.image}}" class="tweet-image" src="{% static tweet.image_path %}"></a>
+					<a href="{% url 'detail' tweet.id %}"><img alt="{{tweet.image}}" class="tweet-image" src="{{ tweet.image_path.url }}"></a>
 
 					<div class="tweet-buttons">
 						<a href="{% url 'reply' tweet.id %}"><img class="tweet-reply" src="{% static 'images/comment.svg' %}"></a>

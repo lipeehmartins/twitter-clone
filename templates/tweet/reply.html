@@ -30,7 +30,7 @@
 					<span class="tweet-created-at">{{tweetcontent.created_at}}</span>
 				</div>
 				<p>{{tweetcontent.content}}</p>
-				<img alt="{{tweet.image}}" class="tweet-image" src="{% static tweet.image_path %}">
+				<img alt="{{tweet.image}}" class="tweet-image" src="{{ tweetcontent.image_path.url }}">
 
 				<div class="tweet-buttons">
 					<img class="tweet-reply" src="{% static 'images/comment.svg' %}">
