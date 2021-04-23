@@ -15,6 +15,10 @@ body {
 	border-right: 1px solid #ccc;
 }
 
+a {
+    text-decoration: none;
+}
+
 @media (min-width: 1000px) {
 	.content {
 		max-width: 750px;
@@ -31,8 +35,9 @@ header {
 
 	header img.header-icon {
 		float: left;
-		width: 12%;
+		width: 10%;
 		margin-right: 30px;
+		margin-top: 11px;
 	}
 
 	header img.header-back {
@@ -46,12 +51,12 @@ header {
 		background: #1ca1f2;
 		border: 0;
 		border-radius: 38px;
-		font-size: 3.0rem;
+		font-size: 2.6rem;
 		color: white;
 		width: 200px;
 		padding: 7px;
 		font-weight: bold;
-		margin-top: 30px;
+		margin-top: 31px;
 		position: initial;
 	}
 
@@ -60,12 +65,12 @@ header {
 		background: #1ca1f2;
 		border: 0;
 		border-radius: 38px;
-		font-size: 3.3rem;
+		font-size: 2.6rem;
 		color: white;
 		width: 200px;
 		padding: 7px;
 		font-weight: bold;
-		margin-top: 30px;
+		margin-top: 37px;
 		position: initial;
 	}
 
@@ -83,6 +88,7 @@ header {
 	    float: left;
 	    width: 5%;
 	    margin-right: 16px;
+	    margin-top: 4px;
 	}
 
 	header img.header-back {
@@ -161,6 +167,7 @@ main {
 	justify-content: center;
 	padding: 2rem 0;
 	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
 }
 
 .tweet-icon {
@@ -173,6 +180,11 @@ main {
 }
 
 .tweet-name {
+	font-weight: bold;
+	font-size: smaller;
+}
+
+.tweet-name-input {
 	font-weight: bold;
 	font-size: smaller;
 }
@@ -198,8 +210,8 @@ main {
 }
 
 .tweet-image {
-	width: fit-content;
-	margin: 0 auto;
+	width: 48rem;
+	margin: 14px 0px 0px;
 	border-radius: 10px;
 	border: 1px solid #ccc;
 	margin-bottom: 15px;
@@ -207,6 +219,7 @@ main {
 
 .tweet-buttons {
 	display: block;
+	margin-top: 5px;
 }
 
 .tweet-reply {
@@ -240,15 +253,16 @@ main {
 
 .delete-button {
 	float: right;
-	background: #1ca1f2;
-	border: 0;
-	border-radius: 38px;
+	background: transparent;
+	border: none;
+	/* border-radius: 38px; */
 	font-size: 2.0rem;
-	color: white;
+	color: #1ca1f2;
 	width: 150px;
-	padding: 5px;
+	padding: 4px;
 	font-weight: bold;
 	margin-top: -55px;
+	margin-right: 26px;
 }
 
 
@@ -259,7 +273,10 @@ main {
 		justify-content: center;
 		padding: 2rem 0;
 		border-bottom: 1px solid #ccc;
+		border-top: 1px solid #ccc;
 	}
+
+.tweet {}
 
 	.tweet-icon {
 		flex-basis: 16%;
@@ -297,15 +314,14 @@ main {
 	}
 
 	.tweet-image {
-		width: 90%;
-		margin: 0px 10px;
+		width: 96%;
 		border-radius: 10px;
 		border: 1px solid #ccc;
-		/* margin-bottom: 12px; */
 	}
 
 	.tweet-buttons {
 		display: block;
+		padding-top: 2px;
 	}
 
 	.tweet-reply {
@@ -339,15 +355,16 @@ main {
 
 	.delete-button {
 	float: right;
-	background: #1ca1f2;
-	border: 0;
+	background: transparent;
+	border: none;
 	border-radius: 38px;
 	font-size: 1.3rem;
-	color: white;
+	color: #1ca1f2;
 	width: 100px;
 	padding: 3px;
 	font-weight: bold;
 	margin-top: -37px;
+	margin-right: auto;
 }
 }
 
@@ -408,25 +425,26 @@ main {
 	min-height: auto;
 	display: flex;
 	display: inline-flex;
-	justify-content: center;
+	/* justify-content: center; */
 	padding: 1rem 0;
-	border-bottom: 1px solid #ccc;
+	margin-left: 39px;
 }
+
 
 .tweet-form-icon {
     flex-basis: 12%;
     text-align: left;
-    margin-right: 5rem;
+    margin-right: 1rem;
 }
 
+
 .tweet-form-icon img {
-	width: 90%;
+	width: 94%;
 }
 
 .tweet-form-content {
     flex-basis: 60%;
-    padding-left: 7px;
-
+    /* padding-left: 7px; */
 }
 
 .tweet-form-content p {
@@ -434,11 +452,11 @@ main {
 	color: gray;
 }
 
-.tweet-form-content input {
+.tweet-name-input {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-    width: 90%;
+    width: 123%;
     border: 1px solid #9e9e9e;
-    border-radius: 20px;
+    border-radius: 4px;
     padding: 4% 5%;
     font-size: 210%;
     font-weight: normal;
@@ -446,16 +464,34 @@ main {
     margin-bottom: 8%;
 }
 
+.input {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    width: 119%;
+    border: 1px solid #9e9e9e;
+    border-radius: 4px;
+    padding: 4% 5%;
+    font-size: 210%;
+    font-weight: normal;
+    color: #525252;
+    margin-bottom: 8%;
+    border: none;
+    margin-left: -28px;
+}
+
 .tweet-form-content textarea {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-    width: 94%;
+    width: 129%;
     border: 1px solid #9e9e9e;
-    border-radius: 20px;
+    border-radius: 4px;
     padding: 2% 2%;
     font-size: 210%;
     font-weight: normal;
     color: #525252;
     margin-bottom: 4%;
+}
+
+.tweet-form-icon-reply img {
+	width: 60%;
 }
 
 .tweet-form-image {
@@ -466,23 +502,23 @@ main {
 @media (min-width: 1000px) {
 
 .tweet-form {
-	width: auto%;
-	min-height: auto;
+	width: auto;
+	/* min-height: auto; */
 	display: flex;
 	display: inline-flex;
 	justify-content: center;
 	padding: 1rem 0;
-	border-bottom: 1px solid #ccc;
+	margin-left: -98px;
 }
+
 
 .tweet-form-icon {
     flex-basis: 12%;
-    text-align: left;
-    margin-right: 10rem;
+    margin-right: 3px;
 }
 
 .tweet-form-icon img {
-	width: 80%;
+	width: 60%;
 }
 
 .tweet-form-content {
@@ -495,11 +531,10 @@ main {
 	color: gray;
 }
 
-.tweet-form-content input {
+.tweet-name-input{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-    width: 94%;
-    border: 1px solid #9e9e9e;
-    border-radius: 20px;
+    width: 117%;
+    border-radius: 3px;
     padding: 2% 2%;
     font-size: 100%;
     font-weight: normal;
@@ -507,11 +542,24 @@ main {
     margin-bottom: 8%;
 }
 
+.input {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    width: 117%;
+    padding: 2% 2%;
+    font-size: 100%;
+    font-weight: normal;
+    color: #525252;
+    margin-bottom: 8%;
+    border: none;
+    border-radius: 3px;
+    margin-left: -10px;
+}
+
 .tweet-form-content textarea {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-    width: 94%;
+    width: 117%;
     border: 1px solid #9e9e9e;
-    border-radius: 20px;
+    border-radius: 4px;
     padding: 2% 2%;
     font-size: 100%;
     font-weight: normal;
@@ -524,3 +572,6 @@ main {
 }
 
 }
+
+
+

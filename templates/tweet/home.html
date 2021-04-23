@@ -10,11 +10,13 @@
 	<meta name=”viewport” content=”width=device-width, initial-scale=1”>
 </head>
 <body>
+
 	<div class="content">
 		<form action="{% url 'post' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
 			{{tweet.image }}
 		<header>
-			<h1>Post Tweet</h1>
+			<img class="header-icon" src="{% static 'images/post-default-icon.svg' %}">
+			<h1>Home</h1>
 			<button type="submit" class="header-button">Tweet</button>
 		</header>
 		<div class="tweet-form">
@@ -25,12 +27,9 @@
 
 					<div class="tweet-form-content">
 
-						<input class="tweet-name" type="text" placeholder="Your post name" name="name">
-
+						<input class="tweet-name-input" type="text" placeholder="Your post name" name="name">
 						<textarea class="tweet-textarea" name="text" placeholder="What’s happenning?" rows="7" cols="100"></textarea>
-
-						<img class="tweet-form-image" src="{% static 'images/image.svg' %}">
-						<input type="file" name="image_upload">
+						<input class="input" type="file" name="image_upload">
 					</div>
 				</div>
 		</form>
@@ -58,8 +57,6 @@
 					<div class="tweet-buttons">
 						<a href="{% url 'reply' tweet.id %}"><img class="tweet-reply" src="{% static 'images/comment.svg' %}"></a>
 						<div class="tweet-reply-count">{{tweet.replycount}}</div>
-						<img class="tweet-like" src="{% static 'images/heart.svg' %}">
-						<div class="tweet-like-count">22</div>
 					</div>
 				</div>
 			</div>

@@ -11,6 +11,7 @@
 <body>
 	<div class="content" >
 		<form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+			{{tweet.image }}
 		<header>
 			<a href="{% url 'home' %}"><img class="header-back" src="{% static 'images/back.svg' %}"></a>
 			<h1>Reply</h1>
@@ -35,8 +36,6 @@
 				<div class="tweet-buttons">
 					<img class="tweet-reply" src="{% static 'images/comment.svg' %}">
 					<div class="tweet-reply-count">{{replycount}}</div>
-					<img class="tweet-like" src="{% static 'images/heart.svg' %}">
-					<div class="tweet-like-count">22</div>
 				</div>
 			</div>
 		</div>
@@ -51,12 +50,11 @@
 			<div class="tweet-form-content">
 				<p>Replying to this tweet</p>
 				
-				<input class="tweet-name" type="text" placeholder="Your post name" name="name">
+				<input class="tweet-name-input" type="text" placeholder="Your post name" name="name">
 				
 				<textarea class="tweet-textarea" name="text" placeholder="What’s happenning?" rows="7" cols="100"></textarea>
 
-				<img class="tweet-form-image" src="{% static 'images/image.svg' %}">
-				<input type="file" name="image_upload">
+				<input class="input" type="file" name="image_upload">
 			</div>
 		</div>
 
